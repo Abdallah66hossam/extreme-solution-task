@@ -28,8 +28,8 @@ A React-based web application for exploring GitHub users.
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/yourusername/github-users-explorer.git
-   cd github-users-explorer
+   git clone https://github.com/yourusername/extreme-solutions-task.git
+   cd extreme-solutions-task
    
 2. Install dependencies:
 

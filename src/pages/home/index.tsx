@@ -8,7 +8,6 @@ import type { RootState } from "../../rdx/store";
 
 const Users = () => {
   const { data, loading } = useFetch<User[]>("users");
-  const pageSize = 5;
   const favourites = useSelector((state: RootState) => state.favourites.items);
   const dispatch = useDispatch();
 
@@ -42,7 +41,7 @@ const Users = () => {
         rowKey="id"
         pagination={{
           current: currentPage,
-          pageSize,
+          pageSize: 5,
           total: filteredData.length,
           onChange: handlePageChange,
         }}

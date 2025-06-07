@@ -1,5 +1,5 @@
 import { Table, Avatar, Input } from "antd";
-import type { ColumnsType, TablePaginationConfig } from "antd/es/table";
+import type { ColumnsType } from "antd/es/table";
 import useFetch from "../../hooks/useFetch";
 import { useEffect, useMemo, useState } from "react";
 import { useSearchParams } from "react-router-dom";
@@ -33,12 +33,6 @@ const Users = () => {
     );
   }, [data, search]);
 
-  const total = filteredData.length;
-  const paginatedData = filteredData.slice(
-    (current - 1) * pageSize,
-    current * pageSize
-  );
-
   const handleSearch = (value: string) => {
     setSearchParams({ search: value, page: "1" });
   };
@@ -66,24 +60,6 @@ const Users = () => {
     },
   ];
 
-  const pagination: TablePaginationConfig = {
-    current,
-    pageSize,
-    total,
-    showSizeChanger: false,
-    onChange: handlePageChange,
-    itemRender: (page, type, originalElement) => {
-      if (type === "prev") {
-        return <a onClick={() => handlePageChange(1)}>First</a>;
-      }
-      if (type === "next") {
-        const lastPage = Math.ceil(total / pageSize);
-        return <a onClick={() => handlePageChange(lastPage)}>Last</a>;
-      }
-      return originalElement;
-    },
-  };
-
   return (
     <div>
       <h2 className="text-xl font-semibold mb-4">Users</h2>
@@ -98,10 +74,15 @@ const Users = () => {
       />
       <Table
         columns={columns}
-        dataSource={paginatedData}
+        dataSource={filteredData}
         loading={loading}
         rowKey="id"
-        pagination={pagination}
+        pagination={{
+          current,
+          pageSize,
+          total: filteredData.length,
+          onChange: handlePageChange,
+        }}
       />
     </div>
   );

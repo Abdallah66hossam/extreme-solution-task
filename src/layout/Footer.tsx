@@ -17,8 +17,7 @@ const Footer = () => {
               GitHub Hiring Challenge
             </h3>
             <Text className="text-gray-600 dark:text-gray-400 block mb-4">
-              This application was created as part of a technical assessment for
-              Extreme Solutions.
+              This is a part of a technical assessment for Extreme Solutions.
             </Text>
             <Button
               type="primary"

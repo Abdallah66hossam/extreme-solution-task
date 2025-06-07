@@ -8,7 +8,7 @@ import type { RootState } from "../../rdx/store";
 import { StarFilled, UserOutlined } from "@ant-design/icons";
 
 const Users = () => {
-  const { data, loading } = useFetch<User[]>("users");
+  const { data, loading, error } = useFetch<User[]>("users");
   const favourites = useSelector((state: RootState) => state.favourites.items);
   const dispatch = useDispatch();
 
@@ -47,7 +47,14 @@ const Users = () => {
         className="mb-6 users-search"
         prefix={<UserOutlined className="site-form-item-icon" />}
       />
-
+      {error && (
+        <Alert
+          message="Error Loading Users"
+          type="error"
+          showIcon
+          className="mb-4"
+        />
+      )}
       <Spin spinning={loading} tip="Loading users..." size="large">
         <Table
           columns={columns}
@@ -87,15 +94,3 @@ const Users = () => {
 };
 
 export default Users;
-/**
- * 
- *  {error && (
-        <Alert
-          message="Error Loading Users"
-          description={error.message}
-          type="error"
-          showIcon
-          className="mb-4"
-        />
-      )}
- */

@@ -1,12 +1,16 @@
 import { Table, Input } from "antd";
 import useFetch from "../../hooks/useFetch";
 import type { User } from "../../types/user";
-import { columns } from "./columns";
+import { getColumns } from "./columns";
 import { useTableSearch } from "../../hooks/useTableSearch";
+import { useDispatch, useSelector } from "react-redux";
+import type { RootState } from "../../rdx/store";
 
 const Users = () => {
   const { data, loading } = useFetch<User[]>("users");
   const pageSize = 5;
+  const favourites = useSelector((state: RootState) => state.favourites.items);
+  const dispatch = useDispatch();
 
   const {
     searchValue,
@@ -16,6 +20,8 @@ const Users = () => {
     handlePageChange,
     setSearchValue,
   } = useTableSearch<User>(data || [], "login");
+
+  const columns = getColumns(favourites, dispatch);
 
   return (
     <div>

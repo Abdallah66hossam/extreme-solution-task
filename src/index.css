@@ -1,3 +1,28 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.users-card {
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.users-search {
+  max-width: 600px;
+}
+
+.favorite-row {
+  background-color: #fffbe6;
+}
+
+.favorite-row:hover td {
+  background-color: #fff8e1 !important;
+}
+.ant-badge-count {
+  font-weight: 600;
+  box-shadow: 0 0 0 1px #dc2626;
+}
+
+nav a:active {
+  transform: scale(0.98);
+}

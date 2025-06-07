@@ -2,6 +2,7 @@ import { Avatar, Button } from "antd";
 import type { ColumnsType } from "antd/es/table";
 import type { User } from "../../types/user";
 import { favourite, unFavourite } from "../../rdx/reducers/favouritesSlice";
+import { StarFilled, StarOutlined } from "@ant-design/icons";
 
 export const getColumns = (
   favourites: User[],
@@ -41,7 +42,11 @@ export const getColumns = (
               : dispatch(favourite(record))
           }
         >
-          {isFavourite ? "Remove Favourite" : "Add to Favourites"}
+          {isFavourite ? (
+            <StarFilled style={{ color: "gold", fontSize: "18px" }} />
+          ) : (
+            <StarOutlined style={{ fontSize: "18px" }} />
+          )}
         </Button>
       );
     },

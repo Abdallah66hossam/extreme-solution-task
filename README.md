@@ -8,7 +8,6 @@ A React-based web application for exploring GitHub users.
 ## 🚀 Features
 
 - Display GitHub users with detailed info
-- Include search
 - Search users by login name
 - Mark/unmark users as favorites with Redux & redux-persist
 - Dark mode support via Tailwind CSS
@@ -31,7 +30,6 @@ A React-based web application for exploring GitHub users.
    ```bash
    git clone https://github.com/yourusername/github-users-explorer.git
    cd github-users-explorer
-
    
 2. Install dependencies:
 
@@ -39,7 +37,6 @@ A React-based web application for exploring GitHub users.
    npm install
    # or
    yarn install
-
 
 3. Run the development server:
 

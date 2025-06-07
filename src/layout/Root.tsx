@@ -9,15 +9,15 @@ const Root = () => {
   return (
     <Router>
       <Suspense fallback={<LoadingPage />}>
-        <main>
-          <Nav />
+        <Nav />
+        <main className="px-[4%] mb-10 mt-8 min-h-[60vh]">
           <Routes>
             {routes.map(({ path, component: Component }, i) => (
               <Route key={i} path={`/${path}`} element={<Component />} />
             ))}
           </Routes>
-          <Footer />
         </main>
+        <Footer />
       </Suspense>
     </Router>
   );

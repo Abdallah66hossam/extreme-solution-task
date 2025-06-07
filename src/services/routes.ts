@@ -9,4 +9,8 @@ export const routes = [
     path: "/",
     component: importComponent("home"),
   },
+  {
+    path: "/favourites",
+    component: importComponent("favourites"),
+  },
 ];

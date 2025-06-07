@@ -27,14 +27,20 @@ const Users = () => {
     <Card
       title={
         <Space align="center">
-          <h2 className="text-2xl font-bold m-0">GitHub Users</h2>
-          <Tag icon={<StarFilled />} color="gold">
+          <h2 className="text-2xl font-bold text-gray-900 dark:text-white m-0">
+            GitHub Users
+          </h2>
+          <Tag
+            icon={<StarFilled />}
+            color="gold"
+            className="dark:text-yellow-400 dark:bg-yellow-900/20 dark:border-yellow-300"
+          >
             {favourites.length} Favorites
           </Tag>
         </Space>
       }
       bordered={false}
-      className="users-card"
+      className="users-card dark:bg-gray-900 dark:text-white transition-colors duration-300"
     >
       <Input.Search
         placeholder="Search users by name..."
@@ -44,8 +50,10 @@ const Users = () => {
         value={searchValue}
         onChange={(e) => setSearchValue(e.target.value)}
         onSearch={handleSearch}
-        className="mb-6 users-search"
-        prefix={<UserOutlined className="site-form-item-icon" />}
+        className="mb-6 users-search dark:bg-gray-800 dark:text-white dark:border-gray-700"
+        prefix={
+          <UserOutlined className="site-form-item-icon dark:text-white" />
+        }
       />
       {error && (
         <Alert
@@ -80,11 +88,14 @@ const Users = () => {
                     ? `No users found for "${searchValue}"`
                     : "No users available"
                 }
+                className="dark:text-gray-400"
               />
             ),
           }}
           rowClassName={(record) =>
-            favourites.some((fav) => fav.id === record.id) ? "favorite-row" : ""
+            favourites.some((fav) => fav.id === record.id)
+              ? "favorite-row dark:bg-yellow-100"
+              : "dark:bg-gray-800 dark:text-white"
           }
           scroll={{ x: true }}
         />

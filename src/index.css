@@ -26,3 +26,44 @@
 nav a:active {
   transform: scale(0.98);
 }
+
+.dark .ant-input,
+.dark .ant-input-affix-wrapper,
+.dark .ant-pagination-options-quick-jumper input {
+  background-color: #1f2937 !important;
+  border-color: #374151 !important;
+  color: white !important;
+}
+
+.dark .ant-input::placeholder {
+  color: #9ca3af !important;
+}
+
+.dark .ant-pagination {
+  color: white;
+}
+
+.dark .ant-pagination-item {
+  background-color: #1f2937;
+  border-color: #374151;
+}
+
+.dark .ant-pagination-item a {
+  color: #d1d5db;
+}
+
+.dark .ant-pagination-item-active {
+  background-color: #374151;
+  border-color: #4b5563;
+}
+
+.dark .ant-pagination-item-active a {
+  color: white;
+}
+
+.dark .ant-pagination-prev .ant-pagination-item-link,
+.dark .ant-pagination-next .ant-pagination-item-link {
+  background-color: #1f2937;
+  color: #d1d5db;
+  border-color: #374151;
+}

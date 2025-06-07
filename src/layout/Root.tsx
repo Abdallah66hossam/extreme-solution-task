@@ -10,7 +10,7 @@ const Root = () => {
     <Router>
       <Suspense fallback={<LoadingPage />}>
         <Nav />
-        <main className="px-[4%] mb-10 mt-8 min-h-[60vh]">
+        <main className="px-[4%] pb-10 pt-8 min-h-[60vh] bg-white dark:bg-gray-900">
           <Routes>
             {routes.map(({ path, component: Component }, i) => (
               <Route key={i} path={`/${path}`} element={<Component />} />

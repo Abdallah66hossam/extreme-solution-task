@@ -21,7 +21,7 @@ const Nav = () => {
             className="w-10 h-10 object-contain transition-transform duration-200 group-hover:scale-105 rounded"
           />
           <span className="ml-2 text-red-600 dark:text-red-400 font-bold text-lg hidden md:inline-block">
-            Extreme Solutions
+            Extreme Solution
           </span>
         </Link>
 

@@ -17,12 +17,12 @@ const Footer = () => {
               GitHub Hiring Challenge
             </h3>
             <Text className="text-gray-600 dark:text-gray-400 block mb-4">
-              This is a part of a technical assessment for Extreme Solutions.
+              This is a part of a technical assessment for Extreme Solution.
             </Text>
             <Button
               type="primary"
               icon={<GithubOutlined />}
-              href="https://github.com/Abdallah66hossam/extreme-solutions-task"
+              href="https://github.com/Abdallah66hossam/extreme-solution-task"
               target="_blank"
               className="bg-gray-800 hover:bg-gray-700 text-white border-none"
             >
@@ -83,7 +83,7 @@ const Footer = () => {
         <div className="flex justify-center items-center">
           <Text className="text-gray-500 dark:text-gray-400 text-sm">
             Built with <HeartFilled className="text-red-500 mx-1" /> for Extreme
-            Solutions
+            Solution
           </Text>
         </div>
       </div>
